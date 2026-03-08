@@ -1,16 +1,14 @@
-import Card from "./components/card/Card.jsx";
 import "./App.css";
+import Card from "./components/RatingCard/RatingCard";
 
 function App() {
   return (
     <>
-      <div>
-        <Card
-          title="EXCELLENT"
-          rating={4.6}
-          description="This is a simple card component."
-        />
-      </div>
+      <Card
+        title="EXCELLENT"
+        rating={4.6}
+        description="This is a simple card component."
+      />
     </>
   );
 }
