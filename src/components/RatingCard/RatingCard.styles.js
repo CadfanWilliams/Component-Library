@@ -79,12 +79,6 @@ const Divider = styled.hr`
   margin: 16px 0;
 `;
 
-const BarsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
 export {
   CardContainer,
   Header,
@@ -93,5 +87,4 @@ export {
   FeefoLogo,
   FeefoText,
   Divider,
-  BarsContainer,
 };

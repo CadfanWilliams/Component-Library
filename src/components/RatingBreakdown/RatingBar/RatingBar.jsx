@@ -19,9 +19,7 @@ export default function RatingBar({ starValue, count, maxCount }) {
   return (
     <BarRow>
       <StarLabel aria-hidden="true">{starValue}</StarLabel>
-      <StarIcon active={isActive} aria-hidden="true">
-        ★
-      </StarIcon>
+      <StarIcon aria-hidden="true">★</StarIcon>
       <BarTrack
         role="progressbar"
         aria-valuenow={count}
