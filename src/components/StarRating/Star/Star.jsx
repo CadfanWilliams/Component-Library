@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StarSvg } from "./Star.styles";
+
 export default function Star({ fill, size, index }) {
   const id = `star-gradient-${index}`;
   const bgColor = fill === "empty" ? "#d8d8d8" : "#f5a623";
@@ -45,5 +46,5 @@ Star.propTypes = {
 };
 
 Star.defaultProps = {
-  size: 40,
+  size: 30,
 };

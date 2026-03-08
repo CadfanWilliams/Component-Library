@@ -5,14 +5,18 @@ import {
   RatingLabel,
   ScoreText,
   FeefoLogo,
-  BarsContainer,
   Divider,
   FeefoText,
 } from "./RatingCard.styles";
 import StarRating from "../StarRating/StarRating";
 import RatingBreakdown from "../RatingBreakdown/RatingBreakdown";
 
-export default function Card({ rating, totalReviews, breakdown }) {
+export default function Card({ totalReviews, breakdown }) {
+  const totalStars = breakdown.reduce((sum, rating) => {
+    return sum + rating.starValue * rating.count;
+  }, 0);
+
+  const rating = totalStars / totalReviews;
   const scoreText = `${rating.toFixed(1)} OUT OF 5`;
 
   return (
@@ -22,7 +26,11 @@ export default function Card({ rating, totalReviews, breakdown }) {
       <Header>
         <RatingLabel>Excellent</RatingLabel>
 
-        <StarRating rating={rating} label={`${rating} out of 5 stars`} />
+        <StarRating
+          rating={rating}
+          label={`${rating} out of 5 stars`}
+          size={30}
+        />
 
         <ScoreText>{scoreText}</ScoreText>
 

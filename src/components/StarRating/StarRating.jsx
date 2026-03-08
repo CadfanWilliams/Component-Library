@@ -31,6 +31,6 @@ StarRating.propTypes = {
 };
 
 StarRating.defaultProps = {
-  size: 40,
+  size: 30,
   label: null,
 };
