@@ -6,7 +6,7 @@ function App() {
     <>
       <Card
         title="EXCELLENT"
-        rating={4.6}
+        rating={4.4}
         description="This is a simple card component."
       />
     </>
