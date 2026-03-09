@@ -19,6 +19,7 @@ RatingCard ← Root card, computes rating from breakdown data
 
 ## Potential Improvements
 
+- CI/CD through Github actions
 - Replace PropTypes with TypeScript for compile-time safety
 - Add a loading/skeleton state for when data is being fetched
 - Animate the bar fills on mount using CSS transitions
