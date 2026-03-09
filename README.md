@@ -1,16 +1,26 @@
-# React + Vite
+# Feefo Rating Card
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React component library implementing a Feefo-style product rating card,
+built as part of a UI assessment.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+npm install
+npm run dev # Start dev server at localhost:5173
+npm test # Run tests with coverage
 
-## React Compiler
+## Component Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+RatingCard ← Root card, computes rating from breakdown data
+├── StarRating ← Renders 5 stars (full / half / empty)
+│ └── Star ← Single star SVG with fill state
+└── RatingBreakdown ← Histogram of reviews by star level
+└── RatingBar ← Single row: label, bar, count
 
-## Expanding the ESLint configuration
+## Potential Improvements
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Replace PropTypes with TypeScript for compile-time safety
+- Add a loading/skeleton state for when data is being fetched
+- Animate the bar fills on mount using CSS transitions
+- Internationalise the "OUT OF 5" and "Excellent" strings via i18n
+- Add a theme prop to support white-label colour customisation
