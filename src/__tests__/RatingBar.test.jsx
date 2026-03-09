@@ -77,3 +77,15 @@ describe("RatingBar – a11y", () => {
     expect(hiddenEls.length).toBeGreaterThanOrEqual(1);
   });
 });
+
+describe("RatingBar – edge cases", () => {
+  it("handles maxCount of 0 without crashing", () => {
+    render(<RatingBar starValue={5} count={0} maxCount={0} />);
+    expect(screen.getByRole("progressbar")).toBeInTheDocument();
+  });
+
+  it("handles a count greater than maxCount without crashing", () => {
+    render(<RatingBar starValue={5} count={200} maxCount={100} />);
+    expect(screen.getByRole("progressbar")).toBeInTheDocument();
+  });
+});

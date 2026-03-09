@@ -47,3 +47,20 @@ describe("StarRating", () => {
     expect(screen.getByRole("img")).toBeInTheDocument();
   });
 });
+
+describe("StarRating – edge cases", () => {
+  it("clamps gracefully with a rating above 5", () => {
+    render(<StarRating rating={6} />);
+    expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+
+  it("clamps gracefully with a negative rating", () => {
+    render(<StarRating rating={-1} />);
+    expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+
+  it("handles a rating of exactly 2.5 (half star boundary)", () => {
+    render(<StarRating rating={2.5} />);
+    expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+});

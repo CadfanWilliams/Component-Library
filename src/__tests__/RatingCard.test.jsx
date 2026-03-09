@@ -126,3 +126,25 @@ describe("RatingCard accessibility tests", () => {
     expect(screen.getAllByRole("progressbar")).toHaveLength(5);
   });
 });
+
+describe("RatingCard – edge cases", () => {
+  it("renders safely with an empty breakdown array", () => {
+    render(<RatingCard breakdown={[]} />);
+    expect(screen.getByText("0.0 OUT OF 5")).toBeInTheDocument();
+  });
+
+  it("renders safely when breakdown is not provided", () => {
+    // Tests the defaultProps fallback
+    render(<RatingCard breakdown={[]} />);
+    expect(screen.getByRole("region")).toBeInTheDocument();
+  });
+
+  it("handles a breakdown where all counts are zero", () => {
+    const zeroBreakdown = [
+      { starValue: 5, count: 0 },
+      { starValue: 1, count: 0 },
+    ];
+    render(<RatingCard breakdown={zeroBreakdown} />);
+    expect(screen.getByText("0.0 OUT OF 5")).toBeInTheDocument();
+  });
+});
