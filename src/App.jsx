@@ -1,4 +1,4 @@
-import Card from "./components/RatingCard/RatingCard";
+import RatingCard from "./components/RatingCard/RatingCard";
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 
@@ -36,7 +36,7 @@ function App() {
     <>
       <GlobalStyle />
       <main>
-        <Card {...ratingData} />
+        <RatingCard {...ratingData} />
       </main>
     </>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "jest-styled-components";
-import StarRating from "src\components\StarRating\StarRating.jsx";
+import StarRating from "../components/StarRating/StarRating";
 
 describe("StarRating", () => {
   it("renders with correct aria-label for a whole number rating", () => {

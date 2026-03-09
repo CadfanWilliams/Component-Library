@@ -11,7 +11,7 @@ import {
 import StarRating from "../StarRating/StarRating";
 import RatingBreakdown from "../RatingBreakdown/RatingBreakdown";
 
-export default function Card({ breakdown }) {
+export default function RatingCard({ breakdown }) {
   const totalReviews = breakdown.reduce((sum, rating) => sum + rating.count, 0);
   const totalStars = breakdown.reduce((sum, rating) => {
     return sum + rating.starValue * rating.count;
