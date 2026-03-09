@@ -14,7 +14,6 @@ import {
  */
 export default function RatingBar({ starValue, count, maxCount }) {
   const percentage = maxCount > 0 ? Math.round((count / maxCount) * 100) : 0;
-  const isActive = starValue >= 4;
 
   return (
     <BarRow>
