@@ -12,12 +12,18 @@ import StarRating from "../StarRating/StarRating";
 import RatingBreakdown from "../RatingBreakdown/RatingBreakdown";
 
 export default function RatingCard({ breakdown }) {
-  const totalReviews = breakdown.reduce((sum, rating) => sum + rating.count, 0);
-  const totalStars = breakdown.reduce((sum, rating) => {
+  // null safety: ensure breakdown is an array before processing
+  const safeBreakdown = Array.isArray(breakdown) ? breakdown : [];
+
+  const totalReviews = safeBreakdown.reduce(
+    (sum, rating) => sum + rating.count,
+    0,
+  );
+
+  const totalStars = safeBreakdown.reduce((sum, rating) => {
     return sum + rating.starValue * rating.count;
   }, 0);
-
-  const rating = totalStars / totalReviews;
+  const rating = totalReviews > 0 ? totalStars / totalReviews : 0;
   const scoreText = `${rating.toFixed(1)} OUT OF 5`;
 
   return (
@@ -38,6 +44,7 @@ export default function RatingCard({ breakdown }) {
         <FeefoLogo>
           <span>Product Rating</span>
           <a
+            href="https://www.feefo.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View reviews on Feefo (opens in new tab)"
