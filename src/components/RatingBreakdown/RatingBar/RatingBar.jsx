@@ -13,7 +13,8 @@ import {
  * A single row in the rating breakdown showing star label, bar, and count.
  */
 export default function RatingBar({ starValue, count, maxCount }) {
-  const percentage = maxCount > 0 ? Math.round((count / maxCount) * 100) : 0;
+  const percentage =
+    (maxCount ?? 0) > 0 ? Math.round((count / maxCount) * 100) : 0;
 
   return (
     <BarRow>

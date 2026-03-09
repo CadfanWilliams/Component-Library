@@ -7,11 +7,11 @@ import RatingBar from "./RatingBar/RatingBar";
  * Displays an overall rating with stars, score, and a breakdown by star level.
  */
 export default function RatingBreakdown({ breakdown }) {
-  const maxCount = Math.max(...breakdown.map((b) => b.count), 1);
+  const maxCount = Math.max(...(breakdown?.map((b) => b.count) || []), 1);
 
   return (
     <>
-      {[...breakdown].reverse().map(({ starValue, count }) => (
+      {breakdown && [...breakdown].reverse().map(({ starValue, count }) => (
         <RatingBar
           key={starValue}
           starValue={starValue}

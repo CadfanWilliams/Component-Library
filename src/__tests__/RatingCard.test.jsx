@@ -75,7 +75,7 @@ describe("RatingCard tests", () => {
     render(<RatingCard breakdown={minimal} />);
     expect(screen.getByText("5.0 OUT OF 5")).toBeInTheDocument();
   });
-it("renders with an empty breakdown without crashing", () => {
+  it("renders with an empty breakdown without crashing", () => {
     render(<RatingCard breakdown={[]} />);
     expect(screen.getByText("0.0 OUT OF 5")).toBeInTheDocument();
   });

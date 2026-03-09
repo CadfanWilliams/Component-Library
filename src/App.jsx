@@ -23,11 +23,11 @@ const GlobalStyle = createGlobalStyle`
 
 const ratingData = {
   breakdown: [
-    { starValue: 1, count: 100 },
-    { starValue: 2, count: 67 },
-    { starValue: 3, count: 213 },
-    { starValue: 4, count: 213 },
-    { starValue: 5, count: 1142 },
+    { starValue: 1, count: 0 },
+    { starValue: 2, count: 0 },
+    { starValue: 3, count: 0 },
+    { starValue: 4, count: 0 },
+    { starValue: 5, count: 0 },
   ],
 };
 

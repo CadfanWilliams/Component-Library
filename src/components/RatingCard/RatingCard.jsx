@@ -10,6 +10,7 @@ import {
 } from "./RatingCard.styles";
 import StarRating from "../StarRating/StarRating";
 import RatingBreakdown from "../RatingBreakdown/RatingBreakdown";
+import PropTypes from "prop-types";
 
 export default function RatingCard({ breakdown }) {
   // null safety: ensure breakdown is an array before processing
@@ -63,3 +64,16 @@ export default function RatingCard({ breakdown }) {
     </CardContainer>
   );
 }
+
+RatingCard.propTypes = {
+  breakdown: PropTypes.arrayOf(
+    PropTypes.shape({
+      starValue: PropTypes.number.isRequired,
+      count: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
+};
+
+RatingCard.defaultProps = {
+  breakdown: [],
+};
